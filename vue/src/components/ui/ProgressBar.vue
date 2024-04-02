@@ -69,61 +69,54 @@ export default {
 <style scoped lang="less">
 .progress-bar {
   position: relative;
-}
-
-.circle {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-
-.out-circle {
-  width: 125px;
-  height: 125px;
-  position: absolute;
-  top: 8%;
-  left: 8%;
-  background: #666567;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 5px 10px 2px rgb(0 0 0 / 46%);
-  z-index: 10;
-}
-
-.inner-circle {
-  background: #313133;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  box-shadow: 0px 5px 10px 2px rgb(21 21 21 / 58%) inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.value {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.progress-line {
-  position: absolute;
-}
-
-.circle-bg {
-  fill: none;
-  stroke: #202022;
-  stroke-width: 2;
-}
-
-.circle-progress {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.5s;
+  .circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    .out-circle {
+      width: 125px;
+      height: 125px;
+      position: absolute;
+      top: 8%;
+      left: 8%;
+      background: #666567;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 5px 10px 2px rgb(0 0 0 / 46%);
+      z-index: 10;
+      .inner-circle {
+        background: #313133;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        box-shadow: 0px 5px 10px 2px rgb(21 21 21 / 58%) inset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .value {
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+    }
+    .progress-line {
+      position: absolute;
+      .circle-bg {
+        fill: none;
+        stroke: #202022;
+        stroke-width: 2;
+      }
+      .circle-progress {
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.5s;
+      }
+    }
+  }
 }
 </style>
   
