@@ -1,19 +1,19 @@
 <template>
   <div class="progress-bar">
-    <div class="circle">
-      <div class="out-circle">
-        <div class="inner-circle">
+    <div class="progress-bar__circle">
+      <div class="progress-bar__circle--out">
+        <div class="progress-bar__circle--inner">
           <span class="value">{{ value }}%</span>
         </div>
       </div>
-      <svg class="progress-line" viewBox="0 0 36 36">
+      <svg class="progress-bar__progress-line" viewBox="0 0 36 36">
         <path 
-          class="circle-bg"
+          class="progress-bar__circle-bg"
           d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.8309
             a 15.9155 15.9155 0 0 1 0 -31.8309"/>
         <path 
-          class="circle-progress"
+          class="progress-bar__circle-progress"
           :style="{ strokeDasharray: circumference, strokeDashoffset: offset, stroke: colors[ Math.ceil((this.value / 10) - 1) ] }"
           d="M18 2.0845
             a 15.9155 15.9155 0 0 1 0 31.8309
@@ -69,11 +69,11 @@ export default {
 <style scoped lang="less">
 .progress-bar {
   position: relative;
-  .circle {
+  &__circle {
     position: relative;
     width: 150px;
     height: 150px;
-    .out-circle {
+    &--out {
       width: 125px;
       height: 125px;
       position: absolute;
@@ -86,20 +86,20 @@ export default {
       align-items: center;
       box-shadow: 0px 5px 10px 2px rgb(0 0 0 / 46%);
       z-index: 10;
-      .inner-circle {
-        background: #313133;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        box-shadow: 0px 5px 10px 2px rgb(21 21 21 / 58%) inset;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .value {
-          color: #ffffff;
-          font-weight: 600;
-          font-size: 18px;
-        }
+    }
+    &--inner {
+      background: #313133;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0px 5px 10px 2px rgb(21 21 21 / 58%) inset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .value {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 18px;
       }
     }
     .progress-line {
